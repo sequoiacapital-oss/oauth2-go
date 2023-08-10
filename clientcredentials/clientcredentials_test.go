@@ -15,10 +15,10 @@ import (
 	"net/url"
 	"strings"
 	"testing"
+
 	"time"
 
 	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/internal"
 	"golang.org/x/oauth2/jws"
 )
 
@@ -260,7 +260,6 @@ func TestTokenJWTRequest(t *testing.T) {
 }
 
 func TestTokenRefreshRequest(t *testing.T) {
-	internal.ResetAuthCache()
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.String() == "/somethingelse" {
 			return
