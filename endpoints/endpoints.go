@@ -55,20 +55,23 @@ var Fitbit = oauth2.Endpoint{
 
 // GitHub is the endpoint for Github.
 var GitHub = oauth2.Endpoint{
-	AuthURL:  "https://github.com/login/oauth/authorize",
-	TokenURL: "https://github.com/login/oauth/access_token",
+	AuthURL:       "https://github.com/login/oauth/authorize",
+	TokenURL:      "https://github.com/login/oauth/access_token",
+	DeviceAuthURL: "https://github.com/login/device/code",
 }
 
 // GitLab is the endpoint for GitLab.
 var GitLab = oauth2.Endpoint{
-	AuthURL:  "https://gitlab.com/oauth/authorize",
-	TokenURL: "https://gitlab.com/oauth/token",
+	AuthURL:       "https://gitlab.com/oauth/authorize",
+	TokenURL:      "https://gitlab.com/oauth/token",
+	DeviceAuthURL: "https://gitlab.com/oauth/authorize_device",
 }
 
 // Google is the endpoint for Google.
 var Google = oauth2.Endpoint{
-	AuthURL:  "https://accounts.google.com/o/oauth2/auth",
-	TokenURL: "https://oauth2.googleapis.com/token",
+	AuthURL:       "https://accounts.google.com/o/oauth2/auth",
+	TokenURL:      "https://oauth2.googleapis.com/token",
+	DeviceAuthURL: "https://oauth2.googleapis.com/device/code",
 }
 
 // Heroku is the endpoint for Heroku.
@@ -225,8 +228,9 @@ func AzureAD(tenant string) oauth2.Endpoint {
 		tenant = "common"
 	}
 	return oauth2.Endpoint{
-		AuthURL:  "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/authorize",
-		TokenURL: "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/token",
+		AuthURL:       "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/authorize",
+		TokenURL:      "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/token",
+		DeviceAuthURL: "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/devicecode",
 	}
 }
 
